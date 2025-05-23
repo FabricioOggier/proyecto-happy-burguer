@@ -1,0 +1,158 @@
+header{
+    position: relative; /* Necesario para posicionar el ::before */
+    overflow: hidden;   /* Oculta el desbordamiento del desenfoque */
+    border: 0;          /* Borde*/
+    padding: 4em;       /* Espacio entre el contenido y el borde*/
+    display: flex;      /* Que ocupe todo el espacio*/
+    align-items: center;/* Centrar verticalmente */
+}
+header ::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:url(Imagenes/Fondo.jpg); /* Imagen de fondo*/
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px);          /* Desenfoque aquí */
+    z-index: -1;                /* Coloca detrás del contenido */ 
+}
+header img {    
+    width: 15%;        /* ancho*/
+    height: 15%;       /* Alto*/
+    text-align: left;  /* Alineación*/
+    margin-right: 18%; /* Margen izquierdo*/
+}
+header h1{
+    font-family: cursive;                          /* fuente*/
+    font-size: 75px;                               /* tamaño de letra*/
+    text-align: center;                            /* Alineación*/
+    color: #eb2700;                              /* color de fuente*/
+    flex: 1;                                       /* Cantidad de espacio que usa en el flex*/
+    margin: 0;                                     /* Tamaño del margen*/
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra alredededor de las letras*/
+}
+header h2{
+    font-family: cursive; /* Fuente*/
+    color: white;       /* Color de fuente*/
+    text-align: right;    /* Alineación de texto*/
+    flex: 1;              /* Cantidad de espacio que usa en el flex*/
+    margin: 0;            /* Margen*/
+}
+
+body {
+    margin: 0;                   /* Tamaño del margen*/
+    background-color: #E5DF56; /* Color de fondo*/
+}
+
+.top-shadow {            /* Sombra entre el header y el body*/
+  height: 40px;          /* Altura del sombreado */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), transparent); /* Define el color de la sombra en el fondo*/
+}
+
+.primero {
+    display: flex;                  /* Que ocupe todo el espacio*/
+    align-items: center;            /* Alineación*/
+    justify-content: space-between; /* distribuye: izquierda, centro, derecha */
+    width: 97%;                     /* ancho del body*/
+    padding: 20px;                  /* Espacio entre el contenido y el borde*/
+    margin-top: 20px;               /* Margen superior*/
+}
+.primero ul{
+  border: 2px solid black;  /* El borde de la caja */
+  padding: 30px;              /* Espacio interno entre el texto y el borde */
+  width: fit-content;         /* La caja se ajusta al ancho del contenido */
+  font-size: 25px;            /* Tamaño de la fuente*/
+  border-radius: 8px;         /* Bordes redondeados opcional */
+  height:fit-content;         /* Altura de la caja*/
+  background-color:cornsilk;/* Color de fondo*/
+  text-align: justify;        /* Alineación del texto*/
+  list-style: disc;           /* Modifica el estilo de lista*/
+}
+.primero li {
+  display: flex;                  /* Distribuye el espacio*/
+  justify-content: space-between; /* Alinea a la misma altura */
+  gap: 10px;                      /* Distancia entre los elementos del contenedor*/
+  min-width: 400px;               /* Puedes ajustar según necesidad */
+}
+.nombre {
+  flex: 1; /*Marca el espacio del flex*/
+}
+.precio {
+  min-width: 80px;   /*Establece un mínimo de ancho*/
+  text-align: right;  /*Alineación*/
+  color: green;     /*Color de fuente*/
+}
+.primero img{
+    border: 4px solid grey; /* Borde de la imagen*/
+    
+}
+
+.segundo {
+    display: flex;                  /* Que ocupe todo el espacio*/
+    justify-content: space-between; /* distribuye: izquierda, centro, derecha */
+    width: 97%;                     /* ancho del body*/
+    padding: 20px;                  /* Espacio entre el contenido y el borde*/
+    margin-top: 20px;               /* Margen superior*/
+    text-align: center;             /* Alineación*/
+    font-size: 30px;                /* Tamaño de fuente*/
+}
+.segundo img{
+    height: 12em;                   /* Alto de la imágen*/
+    width: 17em;                    /* Ancho de la imágen*/
+    border: 2px solid black;      /* Borde de la imagen*/
+}
+
+.uno{ 
+    border: 2px solid black;      /* Borde de todo el contenido*/
+    padding: 25px;                  /* Expacio entre el borde y el contenido */
+    border-radius: 10px;            /* Redondea el borde en las esquinas */
+    background-color: #ff360e;    /* Color de fondo */
+    
+}
+.uno:hover{                                         /* Alterar el contenido al colocar el mouse arriva */
+    transform:scale(1.05);                          /* Aumentar el tamaño de los elementos */
+    border: 3px solid black;                      /* Tamaño y color del borde */
+    box-shadow: 2 2 15px white 2 2 30px blue;   /* Sombra alrededor de la caja*/
+}
+
+footer{
+    background-color: #ff360e;               /* Color de fondo*/
+    font-family: Arial, Helvetica, sans-serif; /* Fuente*/         
+    font-size: 22px;                           /* Tamaño de fuente*/
+}
+
+.ARRIBA{
+    justify-content: space-between; /* Distribuye el espacio */
+    padding: 20px;                  /* Espacio entre el contenido y el borde*/    
+    margin-top: 20px;               /* Margen superior */
+    margin-right: 40px;             /* Margen derecho*/
+    display: flex;                  /* Que ocupe todo el espacio*/
+    color: black                  /* Color de la letra */
+}
+
+.ajuste img {                
+    width: 2em;           /* Ancho de imagen*/
+    height: 2em;          /* Alto de imagen*/
+    margin-right: 10px;   /* Margen derecho */
+    
+}
+.ajuste a{
+    align-items: center;  /* Alinea verticalemente al centro */
+    position: relative;   /* Permite ajustar la posición, pero sigue ocupando el lugar original*/
+    bottom: 13px;         /* Baja 10 px la imagen*/
+}
+.derecha{
+    margin-left: 30%;  /* Margen izquierdo */
+    padding: 5px;      /* Separación del borde*/
+}
+.C{
+    padding: 5px;       /* Separación del borde*/
+    margin-left: 10px;  /* Separación del borde*/
+    
+}
+.C:hover{           /* Cambia cuando esta el cursor arriva*/
+    color: white; /* Cambia el color */
+}
