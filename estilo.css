@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'MiFuente';
+  src: url('NunitoSans-VariableFont_YTLC\,opsz\,wdth\,wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 header{
     position: relative; /* Necesario para posicionar el ::before */
     overflow: hidden;   /* Oculta el desbordamiento del desenfoque */
@@ -5,10 +13,11 @@ header{
     padding: 4em;       /* Espacio entre el contenido y el borde*/
     display: flex;      /* Que ocupe todo el espacio*/
     align-items: center;/* Centrar verticalmente */
+    width: 100%;
 }
 header ::before{
     content: "";
-    position: absolute;
+    position: absolute; /*Cambia la posición*/
     top: 0;
     left: 0;
     right: 0;
@@ -44,6 +53,8 @@ header h2{
 
 body {
     margin: 0;                   /* Tamaño del margen*/
+    border: 0;
+    padding: 0;
     background-color: #E5DF56; /* Color de fondo*/
 }
 
@@ -59,6 +70,7 @@ body {
     width: 97%;                     /* ancho del body*/
     padding: 20px;                  /* Espacio entre el contenido y el borde*/
     margin-top: 20px;               /* Margen superior*/
+    font-family: 'Mifuente';
 }
 .primero ul{
   border: 2px solid black;  /* El borde de la caja */
@@ -77,6 +89,31 @@ body {
   gap: 10px;                      /* Distancia entre los elementos del contenedor*/
   min-width: 400px;               /* Puedes ajustar según necesidad */
 }
+.carrito{
+  border: 2px solid black;  /* El borde de la caja */
+  padding: 30px;              /* Espacio interno entre el texto y el borde */
+  width: fit-content;         /* La caja se ajusta al ancho del contenido */
+  font-size: 25px;            /* Tamaño de la fuente*/
+  border-radius: 8px;         /* Bordes redondeados opcional */
+  height:fit-content;         /* Altura de la caja*/
+  background-color:cornsilk;/* Color de fondo*/
+  text-align: center;        /* Alineación del texto*/
+  list-style: disc;           /* Modifica el estilo de lista*/
+  min-width: 16em;
+
+}
+.carrito ul {
+    border: 0;
+    font-size: 20px;
+    text-align: left;
+    margin: 0;
+}
+.primero button{
+    border: 4px black;
+    font-size: 20px;
+    font-family: 'MiFuente';
+    border-radius: 1px;
+}
 .nombre {
   flex: 1; /*Marca el espacio del flex*/
 }
@@ -92,16 +129,18 @@ body {
 
 .segundo {
     display: flex;                  /* Que ocupe todo el espacio*/
-    justify-content: space-between; /* distribuye: izquierda, centro, derecha */
-    width: 97%;                     /* ancho del body*/
-    padding: 20px;                  /* Espacio entre el contenido y el borde*/
-    margin-top: 20px;               /* Margen superior*/
+    justify-content:center; /* distribuye: izquierda, centro, derecha */
+    gap: 80px;
+    width: 98%;                         /* ancho del body*/
+    padding: 10px;                  /* Espacio entre el contenido y el borde*/
+    margin-top: 40px;               /* Margen superior*/
     text-align: center;             /* Alineación*/
     font-size: 30px;                /* Tamaño de fuente*/
+    font-family: 'MiFuente';
 }
 .segundo img{
-    height: 12em;                   /* Alto de la imágen*/
-    width: 17em;                    /* Ancho de la imágen*/
+    height: 10em;                   /* Alto de la imágen*/
+    width: 14em;                    /* Ancho de la imágen*/
     border: 2px solid black;      /* Borde de la imagen*/
 }
 
@@ -116,8 +155,23 @@ body {
     transform:scale(1.05);                          /* Aumentar el tamaño de los elementos */
     border: 3px solid black;                      /* Tamaño y color del borde */
     box-shadow: 2 2 15px white 2 2 30px blue;   /* Sombra alrededor de la caja*/
+    color: rgba(0, 0, 0, 1);    
+    background-color: #ff0000;
+    padding-bottom: 23px;
+    padding-left: 24px;
+    padding-right: 24px;
 }
-
+.uno button {
+    border: 2px black;
+    font-size: 16px;
+    font-family: 'MiFuente';
+    border-radius: 1px;
+    background-color: cornsilk;
+}
+.uno button:hover {
+    background-color: white;
+    transform: scale(1.2);
+}
 footer{
     background-color: #ff360e;               /* Color de fondo*/
     font-family: Arial, Helvetica, sans-serif; /* Fuente*/         
