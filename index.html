@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -7,24 +6,29 @@
     <title>HAPPY BURGER</title>
     <link rel="stylesheet" href="estilo.css">
     <link rel="shortcut icon" href="Imagenes/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Rubik+Dirt&display=swap" rel="stylesheet">
 
 </head>
 <header>
     <img src="Imagenes/Logo header.png" alt="Logo">
-    <h1>Happy burger</h1> 
+    <h1>Happy Burger</h1> 
     <h2>Contacto:3496-219856</h2>
 </header>
+
 <body>
     <div class="top-shadow"></div>
     <div class="primero"><!--Primera fila -->
-        <ul>
-            <strong> <u>MENU</u></strong><br><br><!--Primera columna -->
+        <ul><!--Primera columna -->
+            <strong><u>MENU</u></strong><br><br>
             <strong>HAMBURGUESAS</strong>
             <li><span class="nombre">Hamburguesa simple</span><span class="precio">$2500</span></li>
             <li><span class="nombre">Hamburguesa completa</span><span class="precio">$3000</span></li>
             <li><span class="nombre">Hamburguesa doble</span><span class="precio">$3500</span></li>
             <li><span class="nombre">Hamburguesa Gran Happy</span><span class="precio">$3800</span></li>
             <li><span class="nombre">Hamburguesa vegana</span><span class="precio">$3000</span></li>
+            <li><span class="nombre">Hamburguesa completa con papas</span><span class="precio">$4500</span> </li>
             
             <br><strong>PIZZAS</strong>
             <li><span class="nombre">Pizza simple</span><span class="precio">$4000</span></li>
@@ -37,94 +41,113 @@
             <li><span class="nombre">Agua saborizada</span><span class="precio">$1500</span></li>
             
             <br><strong>OTROS</strong>
-            <li><span class="nombre">Papas fritas</span><span class="precio">$2700</span></li>
+            <li><span class="nombre">Papas fritas</span><span class="precio">$2000</span></li>
             <li><span class="nombre">Sandwich de milanesa</span><span class="precio">$3100</span></li>
             <li><span class="nombre">Sandwich de milanesa especial</span><span class="precio">$3600</span></li>
   </ul>
-        <ul><strong><u>COMBOS</u></strong><br></BR><!--Segunda columna -->
-            <LI>Hamburguesa completa con papas</LI>
-            <li>Doble hamburguesa</li>
-            <li>Gran happy con papas y gaseosa</li>
-        </ul>
+        <div class="carrito"><!--Segunda columna -->
+           <strong><u>COMPRAS</u></strong><br>
+            <ul id="lista-carrito"></ul>
+            <p><strong>Total: $<span id="total">0</span></strong></p>
+            <button onclick="finalizarCompra()">Finalizar compra</button>
+        </div>
         <img src="Imagenes/Publicidad.png" alt=""><!--Tercer columna -->
     </div>
+
     <div class="segundo"><!--Segunda fila -->
         <article class="uno"><!--Primera columna -->
             <img src="Imagenes/simple.jpg" >
             <p>Hamburguesa Simple</p>
+            <button onclick="añadir('Hamburgesa simple',2500)">COMPRAR</button>
         </article>
         <article class="uno"><!--Segunda columna -->
             <img src="Imagenes/completa.jpg" >
             <p>Hamburguesa Completa</p>
+            <button onclick="añadir('Hamburgesa completa',3000)">COMPRAR</button>
         </article>
         <article class="uno"><!--Tercer columna -->
             <img src="Imagenes/triple.webp" alt="">
             <p>Hamburgesa doble</p>
+            <button onclick="añadir('Hamburgesa doble',3500)">COMPRAR</button>
         </article>
     </div>
+
     <div class="segundo"> <!--Tercer fila -->
         <article class="uno"><!--Primera columna -->
             <img src="Imagenes/gran happy.png" >
             <p>Gran Happy</p>
+            <button onclick="añadir('Hamburgesa Gran Happy',3800)">COMPRAR</button>
         </article>
         <article class="uno"><!--Segunda columna -->
             <img src="Imagenes/vegana.jpg" >
             <p>Hamburguesa Vegana</p>
+            <button onclick="añadir('Hamburgesa vegana',3000)">COMPRAR</button>
         </article>
         <article class="uno"><!--Tercer columna -->
             <img src="Imagenes/hamburguesa con papas.png">
             <p>Combo hamburguesa con papas</p>
+            <button onclick="añadir('Hambur. completa con papas',4500)">COMPRAR</button>
         </article>
-        
     </div>
+
     <div class="segundo"><!--Cuarta fila -->
         <article class="uno"><!--Primera columna -->
             <img src="Imagenes/p simple.jpg" >
             <p>Pizza simple</p>
+            <button onclick="añadir('Pizza simple',4000)">COMPRAR</button>
         </article>
         <article class="uno"><!--Segunda columna -->
             <img src="Imagenes/p especial.jpg" >
             <p>Pizza Especial</p>
+            <button onclick="añadir('Pizza especial',4500)">COMPRAR</button>
         </article>
         <article class="uno"><!--Tercer columna -->
             <img src="Imagenes/p cuatro.png">
             <p>Pizza Cuatro Quesos</p>
+            <button onclick="añadir('Pizza cuatro quesos',4300)">COMPRAR</button>
         </article>
-        
     </div>
+
     <div class="segundo"><!--Quinta fila -->
         <article class="uno"><!--Primera columna -->
             <img src="Imagenes/gaseosa.jpg" >
             <p>Gaseosa</p>
+            <button onclick="añadir('Gaseosa',2500)">COMPRAR</button>
         </article>
         <article class="uno"><!--Segunda columna -->
-            <img src="Imagenes/vegana.jpg" >
+            <img src="Imagenes/jugo.jpg" >
             <p>Jugo</p>
+            <button onclick="añadir('Jugo',2000)">COMPRAR</button>
         </article>
         <article class="uno"><!--Tercer columna -->
-            <img src="Imagenes/hamburguesa con papas.png">
+            <img src="Imagenes/saborizada.png">
             <p>Agua Saborizada</p>
+            <button onclick="añadir('Agua saborizada',1500)">COMPRAR</button>
         </article>
-        
     </div>
+
     <div class="segundo"><!--Sexta fila -->
         <article class="uno"><!--Primera columna -->
-            <img src="Imagenes/gran happy.png" >
+            <img src="Imagenes/fritas.jpg" >
             <p>Papas Fritas</p>
+            <button onclick="añadir('Papas fritas',2000)">COMPRAR</button>
         </article>
         <article class="uno"><!--Segunda columna -->
-            <img src="Imagenes/vegana.jpg" >
-            <p>Sandwitch de Milanesa</p>
+            <img src="Imagenes/milanesa.jpg" >
+            <p>Sandwich de Milanesa</p>
+            <button onclick="añadir('Sandwich de milanesa',3100)">COMPRAR</button>
         </article>
         <article class="uno"><!--Tercer columna -->
-            <img src="Imagenes/hamburguesa con papas.png">
-            <p>Sandwitch de Milanesa especial</p>
+            <img src="Imagenes/m especial.jpg">
+            <p>Sandwich de Milanesa Especial</p>
+            <button onclick="añadir('Sandwich de milanesa especial',3600)">COMPRAR</button>
         </article>
-        
     </div>
+
 </body>
 <footer>
-    <div   class="ARRIBA">
+    <!--Parte de abajo -->
+    <div   class="ARRIBA"><!--Primera Columna -->
         <article>
             <div class="ajuste">
                 <img src="Imagenes/instagram.png" alt="">
@@ -139,15 +162,16 @@
                 <a href="https://www.whatsapp.com" style="text-decoration: none; color: black;">Whatsapp: 3496-219856</a>
             </div>
         </article>
-        <article class="derecha">
+        <article class="derecha"><!--Segunda Columna -->
             Dirección: Av. San Martín 1104, Humboldt, Santa fe <br> Ubicación: 
             <a href="https://maps.app.goo.gl/RG1MxfFHq4kqhAjd9" target="_blank" style="text-decoration: none; color: white;" >Click aquí<a>
         </article>
     </div>
+    <!--Parte de abajo -->
     <article class="C">Copright  </article>
     <article class="C">derechos de uso</article>
     <article class="C">políticas de publicidad</article>
     <article class="C">políticas de cookies </article>
-    
+    <script src="estilo.js"></script>
 </footer>
 </html>
