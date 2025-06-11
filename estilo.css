@@ -1,9 +1,16 @@
 @font-face {
-  font-family: 'MiFuente';
+  font-family: 'NunitoSans';
   src: url('NunitoSans-VariableFont_YTLC\,opsz\,wdth\,wght.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'RockSalt';
+  src: url('RockSalt-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 * {
   margin: 0;
@@ -41,13 +48,16 @@ header img {
     margin-right: 18%; /* Margen izquierdo*/
 }
 header h1{
-    font-family: cursive;                          /* fuente*/
-    font-size: 75px;                               /* tamaño de letra*/
+                          /* fuente*/
+    font-size: 60px;                               /* tamaño de letra*/
     text-align: center;                            /* Alineación*/
     color: #eb2700;                              /* color de fuente*/
     flex: 1;                                       /* Cantidad de espacio que usa en el flex*/
     margin: 0;                                     /* Tamaño del margen*/
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra alredededor de las letras*/
+    font-family: "RockSalt";
+ 
+  font-style: normal;
 }
 header h2{
     font-family: cursive; /* Fuente*/
@@ -77,7 +87,7 @@ body {
     width: 97%;                     /* ancho del body*/
     padding: 20px;                  /* Espacio entre el contenido y el borde*/
     margin-top: 20px;               /* Margen superior*/
-    font-family: 'Mifuente';
+    font-family: 'NunitoSans';
     flex-wrap: wrap;
 }
 .primero ul{
@@ -144,7 +154,9 @@ body {
     margin-top: 40px;               /* Margen superior*/
     text-align: center;             /* Alineación*/
     font-size: 30px;                /* Tamaño de fuente*/
-    font-family: 'MiFuente';
+    font-family: 'NunitoSans';
+    width: 100%;
+    flex-wrap: wrap;
 }
 .segundo img{
     height: 10em;                   /* Alto de la imágen*/
@@ -239,4 +251,5 @@ footer{
   header h2 {
     font-size: 14px;
   }
+
 }
