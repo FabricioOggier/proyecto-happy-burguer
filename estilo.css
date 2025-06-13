@@ -48,14 +48,13 @@ header img {
     margin-right: 18%; /* Margen izquierdo*/
 }
 header h1{
-                          /* fuente*/
     font-size: 60px;                               /* tamaño de letra*/
     text-align: center;                            /* Alineación*/
     color: #eb2700;                              /* color de fuente*/
     flex: 1;                                       /* Cantidad de espacio que usa en el flex*/
     margin: 0;                                     /* Tamaño del margen*/
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra alredededor de las letras*/
-    font-family: "RockSalt";
+    font-family: "RockSalt";                       /* fuente*/
  
   font-style: normal;
 }
@@ -125,7 +124,6 @@ body {
   text-align: center;        /* Alineación del texto*/
   list-style: disc;           /* Modifica el estilo de lista*/
   min-width: 16em;
-
 }
 .carrito ul {
     border: 0;
@@ -138,11 +136,17 @@ body {
   padding: 4px;      /* Espaciado interno */
   font-size: 14px;   /* Tamaño del texto */
 }
-.primerfila button{
+.carrito button{
     border: 4px black;
     font-size: 20px;
     font-family: 'MiFuente';
     border-radius: 1px;
+}
+.carrito button:hover{
+  background-color: white;
+}
+.carrito button:active{
+  background-color: #E5DF56;
 }
 .primerfila img{
     border: 4px solid grey; /* Borde de la imagen*/
@@ -237,7 +241,12 @@ footer{
 .politicas:hover{           /* Cambia cuando esta el cursor arriva*/
     color: white; /* Cambia el color */
 }
-
+@media(max-width:1383px){
+  .primerfila{
+    justify-content: center;
+    gap: 20px;
+  }
+}
 @media(max-width:768px){
     header {
     flex-direction: column;
@@ -266,6 +275,7 @@ footer{
   .primerfila ul{
     font-size: 14px;
   }
+  
   .precio{
     min-width: 40px;
   }
@@ -277,11 +287,14 @@ footer{
 }
 .carrito ul {
     border: 0;
-    font-size: 20px;
+    font-size: 12px;
     text-align: right;
     margin: 0;
 }
-.carrito button
+.carrito button{
+  font-size: 12px;
+  width: fit-content;
+}
 .cantidad {
   width: 50px;       /* Ancho más pequeño */
   padding: 4px;      /* Espaciado interno */
@@ -295,7 +308,10 @@ footer{
   width: 14em;
  }
  .prod{
-  padding: 12px;                  /* Expacio entre el borde y el contenido */
+    padding: 12px;                  /* Expacio entre el borde y el contenido */
     border-radius: 5px;
+ }
+ footer{
+  font-size: 11px;
  }
 }
