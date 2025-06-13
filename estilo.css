@@ -75,22 +75,23 @@ body {
     width: 100%;
 }
 
-.top-shadow {            /* Sombra entre el header y el body*/
+.sombra {            /* Sombra entre el header y el body*/
   height: 40px;          /* Altura del sombreado */
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), transparent); /* Define el color de la sombra en el fondo*/
 }
 
-.primero {
+.primerfila {
     display: flex;                  /* Que ocupe todo el espacio*/
     align-items: center;            /* Alineación*/
     justify-content: space-between; /* distribuye: izquierda, centro, derecha */
-    width: 97%;                     /* ancho del body*/
+    width: 100%;                     /* ancho del body*/
     padding: 20px;                  /* Espacio entre el contenido y el borde*/
     margin-top: 20px;               /* Margen superior*/
     font-family: 'NunitoSans';
     flex-wrap: wrap;
+    text-align: center;
 }
-.primero ul{
+.primerfila ul{
   border: 2px solid black;  /* El borde de la caja */
   padding: 2em;              /* Espacio interno entre el texto y el borde */
   width: fit-content;         /* La caja se ajusta al ancho del contenido */
@@ -101,15 +102,21 @@ body {
   text-align: justify;        /* Alineación del texto*/
   list-style: disc;           /* Modifica el estilo de lista*/
 }
-.primero li {
+.primerfila li {
   display: flex;                  /* Distribuye el espacio*/
   justify-content: space-between; /* Alinea a la misma altura */
   gap: 10px;                      /* Distancia entre los elementos del contenedor*/
   min-width: 400px;               /* Puedes ajustar según necesidad */
 }
+
+.precio {
+  min-width: 80px;   /*Establece un mínimo de ancho*/
+  text-align: right;  /*Alineación*/
+  color: green;     /*Color de fuente*/
+}
 .carrito{
   border: 2px solid black;  /* El borde de la caja */
-  padding: 30px;              /* Espacio interno entre el texto y el borde */
+  padding: 20px;              /* Espacio interno entre el texto y el borde */
   width: fit-content;         /* La caja se ajusta al ancho del contenido */
   font-size: 25px;            /* Tamaño de la fuente*/
   border-radius: 8px;         /* Bordes redondeados opcional */
@@ -123,29 +130,26 @@ body {
 .carrito ul {
     border: 0;
     font-size: 20px;
-    text-align: left;
+    text-align: right;
     margin: 0;
 }
-.primero button{
+.cantidad {
+  width: 50px;       /* Ancho más pequeño */
+  padding: 4px;      /* Espaciado interno */
+  font-size: 14px;   /* Tamaño del texto */
+}
+.primerfila button{
     border: 4px black;
     font-size: 20px;
     font-family: 'MiFuente';
     border-radius: 1px;
 }
-.nombre {
-  flex: 1; /*Marca el espacio del flex*/
-}
-.precio {
-  min-width: 80px;   /*Establece un mínimo de ancho*/
-  text-align: right;  /*Alineación*/
-  color: green;     /*Color de fuente*/
-}
-.primero img{
+.primerfila img{
     border: 4px solid grey; /* Borde de la imagen*/
     
 }
 
-.segundo {
+.productos {
     display: flex;                  /* Que ocupe todo el espacio*/
     justify-content:center; /* distribuye: izquierda, centro, derecha */
     gap: 80px;
@@ -158,20 +162,20 @@ body {
     width: 100%;
     flex-wrap: wrap;
 }
-.segundo img{
+.productos img{
     height: 10em;                   /* Alto de la imágen*/
     width: 14em;                    /* Ancho de la imágen*/
     border: 2px solid black;      /* Borde de la imagen*/
 }
 
-.uno{ 
+.prod{ 
     border: 2px solid black;      /* Borde de todo el contenido*/
     padding: 25px;                  /* Expacio entre el borde y el contenido */
     border-radius: 10px;            /* Redondea el borde en las esquinas */
     background-color: #ff360e;    /* Color de fondo */
     
 }
-.uno:hover{                                         /* Alterar el contenido al colocar el mouse arriva */
+.prod:hover{                                         /* Alterar el contenido al colocar el mouse arriva */
     transform:scale(1.05);                          /* Aumentar el tamaño de los elementos */
     border: 3px solid black;                      /* Tamaño y color del borde */
     box-shadow: 2 2 15px white 2 2 30px blue;   /* Sombra alrededor de la caja*/
@@ -181,16 +185,19 @@ body {
     padding-left: 24px;
     padding-right: 24px;
 }
-.uno button {
+.prod button {
     border: 2px black;
     font-size: 16px;
     font-family: 'MiFuente';
     border-radius: 1px;
     background-color: cornsilk;
 }
-.uno button:hover {
+.prod button:hover {
     background-color: white;
     transform: scale(1.2);
+}
+.prod button:active{
+    background-color: yellow;
 }
 footer{
     background-color: #ff360e;               /* Color de fondo*/
@@ -222,14 +229,15 @@ footer{
     margin-left: 30%;  /* Margen izquierdo */
     padding: 5px;      /* Separación del borde*/
 }
-.C{
+.politicas{
     padding: 5px;       /* Separación del borde*/
     margin-left: 10px;  /* Separación del borde*/
     
 }
-.C:hover{           /* Cambia cuando esta el cursor arriva*/
+.politicas:hover{           /* Cambia cuando esta el cursor arriva*/
     color: white; /* Cambia el color */
 }
+
 @media(max-width:768px){
     header {
     flex-direction: column;
@@ -251,5 +259,43 @@ footer{
   header h2 {
     font-size: 14px;
   }
-
+  .primerfila li{
+    font-size: 12px;
+    min-width: 200px;
+  }
+  .primerfila ul{
+    font-size: 14px;
+  }
+  .precio{
+    min-width: 40px;
+  }
+  .carrito{
+  padding: 10px;              /* Espacio interno entre el texto y el borde */
+  font-size: 12px;            /* Tamaño de la fuente*/
+  border-radius: 4px;         /* Bordes redondeados opcional */
+  min-width: 16em;
+}
+.carrito ul {
+    border: 0;
+    font-size: 20px;
+    text-align: right;
+    margin: 0;
+}
+.carrito button
+.cantidad {
+  width: 50px;       /* Ancho más pequeño */
+  padding: 4px;      /* Espaciado interno */
+  font-size: 14px;   /* Tamaño del texto */
+}
+  .productos{
+  font-size: 15px;
+ }
+ .productos img{
+  height: 10em;                   /* Alto de la imágen*/
+  width: 14em;
+ }
+ .prod{
+  padding: 12px;                  /* Expacio entre el borde y el contenido */
+    border-radius: 5px;
+ }
 }
