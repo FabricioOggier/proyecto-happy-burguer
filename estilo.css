@@ -42,8 +42,8 @@ header ::before{
     width: 100%;
 }
 header img {    
-    width: 15%;        /* ancho*/
-    height: 15%;       /* Alto*/
+    width: 14em;        /* ancho*/
+    height: 8em;       /* Alto*/
     text-align: left;  /* Alineación*/
     margin-right: 18%; /* Margen izquierdo*/
 }
@@ -81,20 +81,21 @@ body {
 
 .primerfila {
     display: flex;                  /* Que ocupe todo el espacio*/
-    align-items: center;            /* Alineación*/
+                
     justify-content: space-between; /* distribuye: izquierda, centro, derecha */
     width: 100%;                     /* ancho del body*/
     padding: 20px;                  /* Espacio entre el contenido y el borde*/
     margin-top: 20px;               /* Margen superior*/
     font-family: 'NunitoSans';
     flex-wrap: wrap;
-    text-align: center;
+    text-align: center;             /* Alineación*/
+    row-gap: 10px;
 }
 .primerfila ul{
   border: 2px solid black;  /* El borde de la caja */
   padding: 2em;              /* Espacio interno entre el texto y el borde */
   width: fit-content;         /* La caja se ajusta al ancho del contenido */
-  font-size: 25px;            /* Tamaño de la fuente*/
+  font-size: 22px;            /* Tamaño de la fuente*/
   border-radius: 8px;         /* Bordes redondeados opcional */
   height:fit-content;         /* Altura de la caja*/
   background-color:cornsilk;/* Color de fondo*/
@@ -125,6 +126,7 @@ body {
   list-style: disc;           /* Modifica el estilo de lista*/
   min-width: 16em;
 }
+
 .carrito ul {
     border: 0;
     font-size: 20px;
@@ -135,6 +137,7 @@ body {
   width: 50px;       /* Ancho más pequeño */
   padding: 4px;      /* Espaciado interno */
   font-size: 14px;   /* Tamaño del texto */
+  text-align:end;
 }
 .carrito button{
     border: 4px black;
@@ -148,9 +151,15 @@ body {
 .carrito button:active{
   background-color: #E5DF56;
 }
-.primerfila img{
-    border: 4px solid grey; /* Borde de la imagen*/
-    
+.primerfila a{
+  width:fit-content;
+  height:fit-content;
+}
+.primerfila a img{
+    border: 3px solid grey; /* Borde de la imagen*/
+    width: 25em;
+    height: 25em;
+    border-radius: 8px;
 }
 
 .productos {
@@ -163,13 +172,13 @@ body {
     text-align: center;             /* Alineación*/
     font-size: 30px;                /* Tamaño de fuente*/
     font-family: 'NunitoSans';
-    width: 100%;
     flex-wrap: wrap;
 }
 .productos img{
     height: 10em;                   /* Alto de la imágen*/
     width: 14em;                    /* Ancho de la imágen*/
     border: 2px solid black;      /* Borde de la imagen*/
+    overflow: hidden;
 }
 
 .prod{ 
@@ -177,17 +186,13 @@ body {
     padding: 25px;                  /* Expacio entre el borde y el contenido */
     border-radius: 10px;            /* Redondea el borde en las esquinas */
     background-color: #ff360e;    /* Color de fondo */
-    
+    overflow: hidden;
 }
 .prod:hover{                                         /* Alterar el contenido al colocar el mouse arriva */
     transform:scale(1.05);                          /* Aumentar el tamaño de los elementos */
-    border: 3px solid black;                      /* Tamaño y color del borde */
-    box-shadow: 2 2 15px white 2 2 30px blue;   /* Sombra alrededor de la caja*/
     color: rgba(0, 0, 0, 1);    
     background-color: #ff0000;
-    padding-bottom: 23px;
-    padding-left: 24px;
-    padding-right: 24px;
+   
 }
 .prod button {
     border: 2px black;
@@ -204,7 +209,7 @@ body {
     background-color: yellow;
 }
 footer{
-    background-color: #ff360e;               /* Color de fondo*/
+    background-color: #E6011C;               /* Color de fondo*/
     font-family: Arial, Helvetica, sans-serif; /* Fuente*/         
     font-size: 22px;                           /* Tamaño de fuente*/
 }
@@ -241,11 +246,75 @@ footer{
 .politicas:hover{           /* Cambia cuando esta el cursor arriva*/
     color: white; /* Cambia el color */
 }
+@media(max-width:1610px){
+  .productos{
+  font-size: 25px;
+  gap: 50px;
+ }
+ .prod{
+    padding: 18px;                  /* Expacio entre el borde y el contenido */
+    border-radius: 5px;  
+ }
+
+}
 @media(max-width:1383px){
   .primerfila{
     justify-content: center;
-    gap: 20px;
   }
+}
+@media(max-width:1290px){
+  .productos{
+  font-size: 20px;
+  gap: 50px;
+ }
+ .prod{
+    padding: 18px;                  /* Expacio entre el borde y el contenido */
+ }
+}
+@media(max-width:1383px){
+  .primerfila{
+    justify-content: center;
+  }
+}
+@media(max-width:1290px){
+  .productos{
+  font-size: 20px;
+  gap: 50px;
+ }
+ .prod{
+    padding: 18px;                  /* Expacio entre el borde y el contenido */
+ }
+ .prod button{
+  font-size: 13px;
+ }
+}
+@media(max-width:1080px){
+  .productos{
+  font-size: 15px;
+  gap: 50px;
+ }
+ .prod{
+    padding: 13px;                  /* Expacio entre el borde y el contenido */
+ }
+ .prod button{
+  font-size: 11px;
+ }
+}
+@media(max-width:840px){
+  .productos{
+  font-size: 11px;
+  gap: 40px;
+ }
+ .productos img{
+  border: 1px solid black;      /* Borde de la imagen*/
+ }
+ .prod{
+    padding: 11px;                  /* Expacio entre el borde y el contenido */
+    border: 1px solid black;      /* Borde de la imagen*/
+ }
+ .prod button{
+  font-size: 9px;
+ }
 }
 @media(max-width:768px){
     header {
@@ -255,13 +324,13 @@ footer{
   }
 
   header img {
-    width: 50%;
-    height: auto;
+    width: 10em;
+    height: 6em;
     margin: 0 0 1em 0;
   }
 
   header h1 {
-    font-size: 40px;
+    font-size: 35px;
     padding-bottom: 30px;
   }
 
@@ -300,18 +369,32 @@ footer{
   padding: 4px;      /* Espaciado interno */
   font-size: 14px;   /* Tamaño del texto */
 }
-  .productos{
-  font-size: 15px;
- }
- .productos img{
-  height: 10em;                   /* Alto de la imágen*/
-  width: 14em;
- }
- .prod{
-    padding: 12px;                  /* Expacio entre el borde y el contenido */
-    border-radius: 5px;
- }
+  
  footer{
   font-size: 11px;
+ }
+}
+@media(max-width:640px){
+  .productos{
+  font-size: 9px;
+  gap: 30px;
+ }
+ .prod{
+    padding: 9px;                  /* Expacio entre el borde y el contenido */
+ }
+ .prod button{
+  font-size: 9px;
+ }
+}
+@media(max-width:522px){
+  .productos{
+  font-size: 7px;
+  gap: 20px;
+ }
+ .prod{
+    padding: 7px;                  /* Expacio entre el borde y el contenido */
+ }
+ .prod button{
+  font-size: 7px;
  }
 }
