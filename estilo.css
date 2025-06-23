@@ -37,15 +37,18 @@ header ::before{
     background-image:url(Imagenes/Fondo.jpg); /* Imagen de fondo*/
     background-size: cover;
     background-position: center;
-    filter: blur(8px);          /* Desenfoque aquí */
+   
+    filter: blur(8px)  brightness(0.7);          /* Desenfoque aquí */
     z-index: -1;                /* Coloca detrás del contenido */ 
     width: 100%;
+    
 }
 header img {    
     width: 14em;        /* ancho*/
     height: 8em;       /* Alto*/
     text-align: left;  /* Alineación*/
     margin-right: 18%; /* Margen izquierdo*/
+    
 }
 header h1{
     font-size: 60px;                               /* tamaño de letra*/
@@ -81,10 +84,9 @@ body {
 
 .primerfila {
     display: flex;                  /* Que ocupe todo el espacio*/
-                
     justify-content: space-between; /* distribuye: izquierda, centro, derecha */
     width: 100%;                     /* ancho del body*/
-    padding: 20px;                  /* Espacio entre el contenido y el borde*/
+    padding: 60px;                  /* Espacio entre el contenido y el borde*/
     margin-top: 20px;               /* Margen superior*/
     font-family: 'NunitoSans';
     flex-wrap: wrap;
@@ -126,7 +128,49 @@ body {
   list-style: disc;           /* Modifica el estilo de lista*/
   min-width: 16em;
 }
+#lista-carrito{
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 16px;
+  color: #333;
+  text-align: right;
+}
+#lista-carrito li {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  margin-bottom: 8px;
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  
+}
 
+#lista-carrito input.cantidad {
+  width: 50px;
+  padding: 4px;
+  margin: 0 10px;
+  font-size: 14px;
+  text-align: right;
+}
+
+#lista-carrito button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#lista-carrito button:hover {
+  background-color: #c0392b;
+}
 .carrito ul {
     border: 0;
     font-size: 20px;
@@ -144,6 +188,7 @@ body {
     font-size: 20px;
     font-family: 'MiFuente';
     border-radius: 1px;
+    padding: 3px;
 }
 .carrito button:hover{
   background-color: white;
@@ -200,6 +245,7 @@ body {
     font-family: 'MiFuente';
     border-radius: 1px;
     background-color: cornsilk;
+    padding: 4px;
 }
 .prod button:hover {
     background-color: white;
@@ -212,38 +258,43 @@ footer{
     background-color: #E6011C;               /* Color de fondo*/
     font-family: Arial, Helvetica, sans-serif; /* Fuente*/         
     font-size: 22px;                           /* Tamaño de fuente*/
-}
-
-.ARRIBA{
-    justify-content: space-between; /* Distribuye el espacio */
-    padding: 20px;                  /* Espacio entre el contenido y el borde*/    
+    display:flex;                  /* Que ocupe todo el espacio*/
+    padding: 50px;                  /* Espacio entre el contenido y el borde*/    
     margin-top: 20px;               /* Margen superior */
-    margin-right: 40px;             /* Margen derecho*/
-    display: flex;                  /* Que ocupe todo el espacio*/
-    color: black                  /* Color de la letra */
+    flex-wrap: wrap;
+    color: black;             /* Color de la letra */
+    padding-bottom: 10px;
 }
 
-.ajuste img {                
+.izquierda img {            
+    font-size: 25px;
     width: 2em;           /* Ancho de imagen*/
     height: 2em;          /* Alto de imagen*/
     margin-right: 10px;   /* Margen derecho */
-    
+    flex: 1;
 }
-.ajuste a{
+.izquierda a{
     align-items: center;  /* Alinea verticalemente al centro */
     position: relative;   /* Permite ajustar la posición, pero sigue ocupando el lugar original*/
-    bottom: 13px;         /* Baja 10 px la imagen*/
-}
-.derecha{
-    margin-left: 30%;  /* Margen izquierdo */
-    padding: 5px;      /* Separación del borde*/
-}
-.politicas{
-    padding: 5px;       /* Separación del borde*/
-    margin-left: 10px;  /* Separación del borde*/
+    bottom: 16px;         /* Baja 10 px la imagen*/
     
 }
-.politicas:hover{           /* Cambia cuando esta el cursor arriva*/
+.centro{  
+    flex:1;
+    text-align: center  ;
+}
+.centro iframe{
+  width: 500px;
+  height: 300px;
+  border: 5px black;
+}
+.derecha{ 
+  flex: 1;  
+  padding: 5px;       /* Separación del borde*/
+  margin-left: 10px;  /* Separación del borde*/
+  width: fit-content;
+}
+.derecha:hover{           /* Cambia cuando esta el cursor arriva*/
     color: white; /* Cambia el color */
 }
 @media(max-width:1610px){
