@@ -37,7 +37,6 @@ header ::before{
     background-image:url(Imagenes/Fondo.jpg); /* Imagen de fondo*/
     background-size: cover;
     background-position: center;
-   
     filter: blur(8px)  brightness(0.7);          /* Desenfoque aquí */
     z-index: -1;                /* Coloca detrás del contenido */ 
     width: 100%;
@@ -47,19 +46,18 @@ header img {
     width: 14em;        /* ancho*/
     height: 8em;       /* Alto*/
     text-align: left;  /* Alineación*/
-    margin-right: 18%; /* Margen izquierdo*/
-    
+    /* Margen izquierdo*/
 }
 header h1{
     font-size: 60px;                               /* tamaño de letra*/
     text-align: center;                            /* Alineación*/
     color: #eb2700;                              /* color de fuente*/
-    flex: 1;                                       /* Cantidad de espacio que usa en el flex*/
+    flex: 2;                                       /* Cantidad de espacio que usa en el flex*/
     margin: 0;                                     /* Tamaño del margen*/
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra alredededor de las letras*/
     font-family: "RockSalt";                       /* fuente*/
- 
-  font-style: normal;
+    font-style: normal;
+    padding-left: 15%;
 }
 header h2{
     font-family: cursive; /* Fuente*/
@@ -67,6 +65,7 @@ header h2{
     text-align: right;    /* Alineación de texto*/
     flex: 1;              /* Cantidad de espacio que usa en el flex*/
     margin: 0;            /* Margen*/
+    width: fit-content;
 }
 
 body {
@@ -126,7 +125,7 @@ body {
   background-color:cornsilk;/* Color de fondo*/
   text-align: center;        /* Alineación del texto*/
   list-style: disc;           /* Modifica el estilo de lista*/
-  min-width: 16em;
+  min-width: 560px;
 }
 #lista-carrito{
   list-style: none;
@@ -135,7 +134,7 @@ body {
   font-family: 'Nunito Sans', sans-serif;
   font-size: 16px;
   color: #333;
-  text-align: right;
+  text-align: center;
 }
 #lista-carrito li {
   background-color: #f9f9f9;
@@ -173,16 +172,8 @@ body {
 }
 .carrito ul {
     border: 0;
-    font-size: 20px;
-    text-align: right;
-    margin: 0;
 }
-.cantidad {
-  width: 50px;       /* Ancho más pequeño */
-  padding: 4px;      /* Espaciado interno */
-  font-size: 14px;   /* Tamaño del texto */
-  text-align:end;
-}
+
 .carrito button{
     border: 4px black;
     font-size: 20px;
@@ -205,6 +196,7 @@ body {
     width: 25em;
     height: 25em;
     border-radius: 8px;
+    font-size: 16px ;
 }
 
 .productos {
@@ -232,6 +224,7 @@ body {
     border-radius: 10px;            /* Redondea el borde en las esquinas */
     background-color: #ff360e;    /* Color de fondo */
     overflow: hidden;
+    transition: 0.3s;
 }
 .prod:hover{                                         /* Alterar el contenido al colocar el mouse arriva */
     transform:scale(1.05);                          /* Aumentar el tamaño de los elementos */
@@ -246,6 +239,7 @@ body {
     border-radius: 1px;
     background-color: cornsilk;
     padding: 4px;
+    transition: 0.3s;
 }
 .prod button:hover {
     background-color: white;
@@ -271,9 +265,9 @@ footer{
     width: 2em;           /* Ancho de imagen*/
     height: 2em;          /* Alto de imagen*/
     margin-right: 10px;   /* Margen derecho */
-    flex: 1;
+    flex: 1; 
 }
-.izquierda a{
+.izquierda span{
     align-items: center;  /* Alinea verticalemente al centro */
     position: relative;   /* Permite ajustar la posición, pero sigue ocupando el lugar original*/
     bottom: 16px;         /* Baja 10 px la imagen*/
@@ -282,6 +276,9 @@ footer{
 .centro{  
     flex:1;
     text-align: center  ;
+}
+.hipervinculo{
+  opacity: 0%;
 }
 .centro iframe{
   width: 500px;
@@ -297,7 +294,57 @@ footer{
 .derecha:hover{           /* Cambia cuando esta el cursor arriva*/
     color: white; /* Cambia el color */
 }
-@media(max-width:1610px){
+@media(max-width:1720px){
+  
+  .primerfila ul{
+    font-size: 18px;
+  }
+  .primerfila li{
+    min-width: 0;               /* Puedes ajustar según necesidad */
+  }
+  .precio {
+   min-width: 60px;   /*Establece un mínimo de ancho*/
+  }
+  .carrito {
+    font-size: 18px;
+    min-width: 474px;
+  }
+  #lista-carrito{
+    font-size: 12px;
+  }
+  #lista-carrito li {
+  margin-bottom: 8px;
+  padding: 10px;
+}
+#lista-carrito input.cantidad {
+  width: 44px;
+  padding: 4px;
+  margin: 0 10px;
+  font-size: 12px;
+}
+
+#lista-carrito button {
+  padding: 6px 12px;
+  border-radius: 5px;
+  font-size: 15px;
+}
+  .primerfila a img{
+    font-size: 13px;
+  }
+}
+@media(max-width:1702px){/*header*/
+  header{
+    font-size: 15px;
+  }
+  header h1{
+    font-size: 50px;
+    padding-left: 12%;
+  }
+  header h2{
+    font-size: 20px;
+  }
+}
+@media(max-width:1610px){/*productos*/
   .productos{
   font-size: 25px;
   gap: 50px;
@@ -308,26 +355,57 @@ footer{
  }
 
 }
-@media(max-width:1383px){
-  .primerfila{
-    justify-content: center;
+@media(max-width:1525px){/*header*/
+  header{
+    font-size: 13px;
+  }
+  header h1{
+    padding-left: 10%;
+  }
+  header h2{
+    font-size: 17px;
   }
 }
-@media(max-width:1290px){
-  .productos{
-  font-size: 20px;
-  gap: 50px;
- }
- .prod{
-    padding: 18px;                  /* Expacio entre el borde y el contenido */
- }
+@media(max-width:1400px){
+  
+  .primerfila ul{
+    font-size: 14px;
+  }
+  .primerfila li{
+    min-width: 0;               /* Puedes ajustar según necesidad */
+  }
+  .precio {
+   min-width: 40px;   /*Establece un mínimo de ancho*/
+  }
+  .carrito {
+    font-size: 14px;
+    min-width: 420px;
+  }
+  #lista-carrito{
+    font-size: 10px;
+  }
+  #lista-carrito li {
+  margin-bottom: 8px;
+  padding: 10px;
 }
-@media(max-width:1383px){
-  .primerfila{
-    justify-content: center;
+#lista-carrito input.cantidad {
+  width: 40px;
+  padding: 4px;
+  margin: 0 10px;
+  font-size: 10px;
+}
+
+#lista-carrito button {
+  padding: 6px 12px;
+  border-radius: 5px;
+  font-size: 12px; 
+}
+  .primerfila a img{
+    font-size: 10px;
   }
 }
-@media(max-width:1290px){
+
+@media(max-width:1290px){/*productos*/
   .productos{
   font-size: 20px;
   gap: 50px;
@@ -339,7 +417,31 @@ footer{
   font-size: 13px;
  }
 }
-@media(max-width:1080px){
+@media(max-width:1110px){/*footer*/
+  footer{
+    font-size: 18px;
+  }
+  .izquierda img{
+    font-size: 20px;
+  }
+  .centro iframe{
+    width: 400px;
+    height: 250px;
+  }
+}
+@media(max-width:1100px){/*header*/
+  header{
+    font-size: 10px;
+  }
+  header h1{
+    padding-left: 8%;
+    font-size: 40px;
+  }
+  header h2{
+    font-size: 14px;
+  }
+}
+@media(max-width:1080px){/*productos*/
   .productos{
   font-size: 15px;
   gap: 50px;
@@ -351,7 +453,21 @@ footer{
   font-size: 11px;
  }
 }
-@media(max-width:840px){
+@media(max-width:938px){/*footer*/
+  footer{
+    font-size: 15px;
+  }
+  .centro iframe{
+    width: 300px;
+    height: 180px;
+  }
+}
+@media(max-width:870px){/*header*/
+  header h1{ 
+    padding-left: 3%;
+  }
+}
+@media(max-width:840px){/*productos*/
   .productos{
   font-size: 11px;
   gap: 40px;
@@ -383,6 +499,8 @@ footer{
   header h1 {
     font-size: 35px;
     padding-bottom: 30px;
+    padding-left: 0;
+    padding-top: 20px;
   }
 
   header h2 {
@@ -425,7 +543,7 @@ footer{
   font-size: 11px;
  }
 }
-@media(max-width:640px){
+@media(max-width:640px){/*productos*/
   .productos{
   font-size: 9px;
   gap: 30px;
@@ -437,7 +555,7 @@ footer{
   font-size: 9px;
  }
 }
-@media(max-width:522px){
+@media(max-width:522px){/*productos*/
   .productos{
   font-size: 7px;
   gap: 20px;
